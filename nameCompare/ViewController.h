@@ -2,8 +2,7 @@
 //  ViewController.h
 //  nameCompare
 //
-//  Created by Markus Dietl on 12.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//   No Copyright (c) 2012 - Free to use.
 //
 
 #import <UIKit/UIKit.h>
