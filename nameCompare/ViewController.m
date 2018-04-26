@@ -56,12 +56,8 @@
     
     if (range2.location != NSNotFound) 
     {
-        //original = [original substringFromIndex:range2.location + range2.length];
-        
         NSString *subString1 = [original substringToIndex:range2.location];
         NSString *subString2 = [original substringFromIndex:range2.location + range2.length];
-        
-        //NSLog(@"%@ - %@ original: %@ location: %i", subString1, subString2,original, range2.location);
     }
     
     original = [original stringByReplacingOccurrencesOfString:[self nonInvertedCompare:input:original:index] withString:@""];
@@ -70,8 +66,6 @@
     {
         input = [input substringFromIndex:range1.location + range1.length];
     }
-    
-   // NSLog(@"new input: %@ new original: %@", input, original);
 }
 
 - (void)prepareInvertedCompareWithIndex:(int)index;
@@ -83,9 +77,6 @@
     {
         input = [input substringToIndex:range1.location];
     }
-
-    
-   // NSLog(@"new input: %@ new original: %@", input, original);
 }
 
 - (NSString *)nonInvertedCompare:(NSString *)compareString: (NSString *)originalTmp:(int)beginIndex
@@ -97,11 +88,9 @@
     for (int i = 0; i <orgLength; i++) 
     {
         NSString *toCompareString = [orgString substringToIndex:orgLength-i];
-        //NSLog(@"%@",toCompareString);
         
         if ([inpString rangeOfString:toCompareString].location != NSNotFound) 
         {
-            //NSLog(@"nonInverted: found \"%@\" in the word \"%@\" at index: %i", toCompareString, inpString, [inpString rangeOfString:toCompareString].location);
             return toCompareString;
             i = orgLength;
         }
@@ -116,16 +105,12 @@
     NSString *orgString = [originalTmp substringFromIndex:beginIndex];
     int orgLength = orgString.length;
 
-   // NSLog(@"original: %@ - %@", orgString, inpString);
-    
     for (int i = 0; i <orgLength; i++) 
     {
         NSString *toCompareString = [orgString substringFromIndex:i];
-        //NSLog(@"%@",toCompareString);
         
         if ([inpString rangeOfString:toCompareString].location != NSNotFound) 
         {
-            //NSLog(@"inverted: found \"%@\" in the word \"%@\" at index: %i", toCompareString, inpString, [inpString rangeOfString:compareString].location);
             return toCompareString;
             i = orgLength;
         }
@@ -150,8 +135,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -176,7 +159,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
